@@ -3,7 +3,7 @@ public class Main {
 
         Automat a = new Automat();
 
-        a.setInput(0);
+        a.setInput(2);
         a.next();
 
         a.setInput(1);
