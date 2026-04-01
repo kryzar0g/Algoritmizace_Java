@@ -1,0 +1,23 @@
+stages:
+  - test
+  - build
+
+image: python:3.12
+
+before_script:
+  - python -m pip install --upgrade pip
+  - pip install .[dev]
+
+tests:
+  stage: test
+  script:
+    - pytest
+
+build_package:
+  stage: build
+  script:
+    - pip install build
+    - python -m build
+  artifacts:
+    paths:
+      - dist/
